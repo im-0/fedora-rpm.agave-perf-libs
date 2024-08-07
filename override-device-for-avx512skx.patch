@@ -1,0 +1,13 @@
+diff --git a/src/poh-simd/Makefile b/src/poh-simd/Makefile
+index 3809784b7349..725e3bb971c8 100644
+--- a/src/poh-simd/Makefile
++++ b/src/poh-simd/Makefile
+@@ -33,7 +33,7 @@ $(ISPC_OBJ)/poh-verify-avx2.o: poh-verify.ispc $(DEPS)
+ 
+ $(ISPC_OBJ)/poh-verify-avx512skx.o: poh-verify.ispc $(DEPS)
+ 	@mkdir -p $(ISPC_OBJ)
+-	$(CC) --target=avx512skx-i32x16 -DNAME_SUFFIX=avx512skx $(ISPC_FLAGS) $< -o $@
++	$(CC) --target=avx512skx-i32x16 -DNAME_SUFFIX=avx512skx $(ISPC_FLAGS) --device=skx $< -o $@
+ 
+ $(OUT)/libpoh-simd.so: $(ISPC_C_Objects)
+ 	@mkdir -p $(OUT)
