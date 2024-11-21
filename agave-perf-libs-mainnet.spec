@@ -1,11 +1,11 @@
-%global agave_suffix testnet
+%global agave_suffix mainnet
 
 # Check `--device` in `ispc --help` for available options.
 %global validator_target_cpu core-avx2
 
 Name:       agave-perf-libs-%{agave_suffix}
 Version:    0.19.3
-Release:    1%{?dist}
+Release:    100%{?dist}
 Summary:    C and CUDA libraries to enhance Agave/Solana (no CUDA, only SIMD)
 
 License:    Apache-2.0
@@ -49,5 +49,8 @@ cp -p \
 
 
 %changelog
+* Thu Nov 21 2024 Ivan Mironov <mironov.ivan@gmail.com> - 0.19.3-100
+- Rebuild for Mainnet
+
 * Wed Aug 7 2024 Ivan Mironov <mironov.ivan@gmail.com> - 0.19.3-1
 - Initial packaging
